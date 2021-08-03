@@ -1,16 +1,28 @@
+// modulos de node
+const path = require('path');
+
+// modulos instalados
 const express = require('express');
-const app = express();
 const morgan = require('morgan');
+
+const app = express();
+
+
 
 // requiriendo rutas
 const routes = require('./routes/routes');
 const routesApi = require('./routes/routes-api');
 
-const port = 3000;
+
 
 //settings
+app.set('port', process.env.PORT || 3000);
+const port = app.get('port');
+
+
+
 app.set('appName','Mi primer server');
-app.set('views',__dirname +'/views');
+app.set('views',path.join(__dirname,'views'));
 app.set('view engine','ejs');
 
 //middlewares
