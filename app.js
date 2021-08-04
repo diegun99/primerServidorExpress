@@ -4,7 +4,7 @@ const path = require('path');
 // modulos instalados
 const express = require('express');
 const morgan = require('morgan');
-const bodyParser = require('body-parser');
+
 
 
 // requiriendo rutas
@@ -24,9 +24,8 @@ app.set('view engine','ejs');
 
 //middlewares
 app.use(morgan('combined'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended : false}));
-
+app.use(express.json());
+app.use(express.urlencoded({extended : false}));
 
 
 //rutas
