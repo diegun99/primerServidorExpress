@@ -1,8 +1,10 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router();// enrutador objeto
 
 router.get('/',(req,res)=>{
-    res.render('index.ejs');
+    res.render('index',{
+        title : 'My webStore'
+    });
 });
 
 router.get('/login',(req,res)=>{
